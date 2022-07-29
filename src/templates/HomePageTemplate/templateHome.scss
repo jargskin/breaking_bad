@@ -1,0 +1,17 @@
+@import '../../styles/commons.scss';
+
+.title-section {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px;
+  text-transform: uppercase;
+  &::before {
+    top: 1rem;
+    left: 1px;
+    width: 0.725rem;
+    height: 2.45rem;
+    content: ' ';
+    background: $background_green;
+  }
+}
