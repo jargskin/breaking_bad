@@ -11,7 +11,7 @@ const Navbar = ({ scroll, objRef }) => {
         </div>
         <Dropdown className='menu-responsive'>
           <Dropdown.Toggle id="dropdown-basic">
-            <i class="fa fa-bars" aria-hidden="true" />
+            <i className="fa fa-bars" aria-hidden="true" />
           </Dropdown.Toggle>
 
           <Dropdown.Menu variant='dark'>

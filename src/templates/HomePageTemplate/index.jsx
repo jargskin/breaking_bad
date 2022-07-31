@@ -9,17 +9,21 @@ import { getCharacters, getListEpisodes } from '../../services/breakingBadApiSer
 import './templateHome.scss';
 
 const HomePageTemplate = ({ objRef, scroll }) => {
-  const [characters, setCharacters] = useState();
-  const [episodes, setEpisodes] = useState();
+  const [characters, setCharacters] = useState({});
+  const [episodes, setEpisodes] = useState({});
   const [isLoading, setLoading] = useState(true);
   
   useEffect(() => {
     (async () => {
-      const resultCharacters = await getCharacters();
-      const resultEpisodes = await getListEpisodes();
-      if (resultCharacters && resultEpisodes) {
-        setCharacters(resultCharacters);
-        setEpisodes(resultEpisodes);
+      try {
+        const resultCharacters = await getCharacters();
+        const resultEpisodes = await getListEpisodes();
+        if (resultCharacters && resultEpisodes) {
+          setCharacters(resultCharacters);
+          setEpisodes(resultEpisodes);
+          setLoading(false);
+        }
+      } catch (error) {
         setLoading(false);
       }
     })();
@@ -46,7 +50,7 @@ const HomePageTemplate = ({ objRef, scroll }) => {
           </div>
         </div>
       </section>
-      { isLoading 
+      { isLoading
         ? 
           <ReactLoading type='spinningBubbles' color='green' className='mx-auto my-5' /> 
         : 
@@ -63,7 +67,7 @@ const HomePageTemplate = ({ objRef, scroll }) => {
               <div className="container-episodes">
                 <div className="container">
                   <h2 className='pt-5 pb-4 title-section'>List of Episodes</h2>
-                  <DropdownEpisodes episodes={episodes} serie={fistSerie} />
+                  <DropdownEpisodes key={fistSerie} episodes={episodes} serie={fistSerie} />
                 </div>
               </div>
             </section>
@@ -71,7 +75,7 @@ const HomePageTemplate = ({ objRef, scroll }) => {
               <div className="container-episodes background-gray pb-5">
                 <div className="container">
                   <h2 className='pt-5 pb-4 title-section'>Related Series</h2>
-                  <DropdownEpisodes episodes={episodes} serie={secondSerie} />
+                  <DropdownEpisodes key={secondSerie} episodes={episodes} serie={secondSerie} />
                 </div>
               </div>
             </section>
