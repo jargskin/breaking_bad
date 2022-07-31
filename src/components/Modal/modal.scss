@@ -1,16 +1,32 @@
 @import '../../styles/commons.scss';
+@import '../../styles/functions.scss';
 
 .generic-modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 5px;
-  border-radius: 5px;
+  background-color: $white;
+  padding: pxToRem(5);
+  border-radius: pxToRem(5);
   text-align: center;
-  min-width: 400px;
+  min-width: pxToRem(400);
 }
+
+.view-trailer {
+  width: pxToRem(70);
+  height: pxToRem(70);
+  padding: pxToRem(10) pxToRem(16);
+  border-radius: pxToRem(35) !important;
+  font-size: pxToRem(12);
+  text-align: center;
+  border: pxToRem(5) solid !important;
+  &:hover {
+      background-color: $background_hover_green  !important;
+      border-color: $background_hover_green  !important;
+    }
+}
+
 .more-details {
   &:hover {
     background-color: $background_hover_green !important;

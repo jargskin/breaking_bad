@@ -1,0 +1,53 @@
+@import '../../styles/commons.scss';
+@import '../../styles/functions.scss';
+
+.top-to-btm {
+  position: relative;
+}
+.container-scroll-icon-style {
+  background-color: $background_green;
+  border: pxToRem(2) solid $white;
+  border-radius: 50%;
+  height: pxToRem(50);
+  width: pxToRem(50);
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+  position: fixed;
+  bottom: pxToRem(40);
+  right: pxToRem(25);
+  z-index: 20;
+  &:hover {
+    animation: none;
+  }
+  i {
+    margin-left: pxToRem(14);
+    margin-top: pxToRem(12);
+    font-weight: bold;
+    font-size: pxToRem(20);
+  }
+}
+
+
+@keyframes movebtn {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(pxToRem(20));
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(pxToRem(-20));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
