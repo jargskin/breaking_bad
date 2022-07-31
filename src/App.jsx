@@ -8,7 +8,7 @@ import './App.scss';
 const  App = () => {
   const scroll = (ref) => {
     window.scrollTo({
-      top: ref.current.offsetTop,
+      top: ref.current.offsetTop - 86,
       behavior: 'smooth',
     });
   }
