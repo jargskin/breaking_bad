@@ -13,6 +13,6 @@
 }
 .more-details {
   &:hover {
-    background-color: $background_hover_green;
+    background-color: $background_hover_green !important;
   }
 }

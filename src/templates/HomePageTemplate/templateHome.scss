@@ -1,17 +1,21 @@
 @import '../../styles/commons.scss';
+@import '../../styles/functions.scss';
 
 .title-section {
   display: flex;
   justify-content: left;
   align-items: center;
-  margin: 10px;
+  margin: pxToRem(10);
   text-transform: uppercase;
   &::before {
-    top: 1rem;
-    left: 1px;
-    width: 0.725rem;
-    height: 2.45rem;
-    content: ' ';
+    content: '';
+    width: pxToRem(12);
+    height: pxToRem(40);
     background: $background_green;
+    margin-right: pxToRem(5);
   }
+}
+
+.background-gray {
+  background: $background_gray;
 }

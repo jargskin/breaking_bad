@@ -1,0 +1,9 @@
+@use 'sass:math';
+@import './commons.scss';
+
+$base-size: $size-base;
+
+@function pxToRem($value) {
+  $remValue: ($value / $base-size)+rem;
+  @return $remValue;
+}

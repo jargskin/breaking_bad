@@ -1,15 +1,19 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
+import Badge from 'react-bootstrap/Badge';
+import { getSeason, getListEpisodesBySeries } from '../../utils/iterarations';
 
-const DropdownEpisodes = (episodes) => {
-  const seasons = episodes.episodes.map((item) => item.season);
+
+const DropdownEpisodes = ({episodes, serie}) => {
+  const seasons = getSeason(episodes, serie);
+  const episodesList = getListEpisodesBySeries(episodes, serie);
 
   const uniqueSeasons = seasons.filter((item,index)=>{
     return seasons.indexOf(item.trim()) === index;
   });
 
-  const breakingBadList = episodes.episodes.filter((item) => item.series === 'Breaking Bad'); 
+   
 
   return (
     <div>
@@ -17,31 +21,28 @@ const DropdownEpisodes = (episodes) => {
         {
           uniqueSeasons.map((itemSeason, index) => (
             <div key={index}>
-              <Accordion.Item eventKey={index}>
+              <Accordion.Item eventKey={index} className="mb-3">
                 <Accordion.Header>Season: {itemSeason}</Accordion.Header>
                 <Accordion.Body>
-                  <Table striped bordered hover>
+                  <Table striped hover responsive>
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Air Date</th>
+                        <th style={{ width: '20%'}}>Title</th>
+                        <th style={{ width: '10%'}}>Air Date</th>
+                        <th style={{ width: '50%'}}>Characters</th>
                       </tr>
                     </thead>
                     <tbody>
                         {
-                          breakingBadList.map((itemList, index) => (
+                          episodesList.map((itemList) => (
                             itemList.season === itemSeason ? 
                             <tr>
-                              <td></td>
                               <td>{itemList.title}</td>
                               <td>{itemList.air_date}</td>
                               <td>
                                 {
-                                  itemList.characters.map((itemCharacter, index) => (
-                                    <ul>
-                                      <li>{itemCharacter}</li>
-                                    </ul>
+                                  itemList.characters.map((itemCharacter) => (
+                                    <Badge pill bg="success" className='mr-3'> {itemCharacter} </Badge>
                                   ))
                                 }
                               </td>
