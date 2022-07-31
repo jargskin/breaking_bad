@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
-import Modal from '../Modal';
+import CharacterModal from '../Modal/CharacterModal';
 import './card.scss';
 
 const Card = (data) => {
@@ -46,11 +46,11 @@ const Card = (data) => {
     <Slider {...settings}>
       {Characters.map((item) => (
         <div className="card" key={item.id}>
-          <div className="card-title">{item.name}</div>
-          <div className="card-image">
+          <div className="card__title">{item.name}</div>
+          <div className="card__image">
             <img src={item.img} alt="" />
           </div>
-          <Modal data={item} />
+          <CharacterModal data={item} />
         </div>
       ))}      
     </Slider>

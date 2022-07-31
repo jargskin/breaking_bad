@@ -3,7 +3,7 @@ import Modal from '@mui/material/Modal';
 import Table from '../Table';
 import './modal.scss';
 
-const GenericModal = (item) => {
+const CharacterModal = (item) => {
   const { name, birthday, img, nickname, portrayed, status } = item.data;
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -40,4 +40,4 @@ const GenericModal = (item) => {
   );
 }
 
-export default GenericModal;
+export default CharacterModal;

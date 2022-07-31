@@ -1,12 +1,21 @@
 @import '../../styles/commons.scss';
 @import '../../styles/functions.scss';
 
+.title {
+  font-size: pxToRem(24);
+  font-weight: 'semi-bold';
+  text-align: center;
+  padding: pxToRem(20) 0;
+  color: $color-text;
+  max-width: pxToRem(900);
+  margin: 0 auto;
+
+}
 .title-section {
   display: flex;
   justify-content: left;
   align-items: center;
   margin: pxToRem(10);
-  text-transform: uppercase;
   &::before {
     content: '';
     width: pxToRem(12);
@@ -16,6 +25,31 @@
   }
 }
 
+.card-container {
+  padding: pxToRem(30) pxToRem(20) pxToRem(60);
+  justify-content: center;
+}
+
 .background-gray {
   background: $background_gray;
+}
+
+.quoteWell {
+  margin-top: pxToRem(12);
+  padding: pxToRem(30) pxToRem(10);  
+  blockquote {
+    border-left: pxToRem(5) solid $border-color;
+    padding-left: pxToRem(10);
+  }
+}
+
+.fa-quote-left {
+  color: #444;
+  background: #eee;
+  border: pxToRem(2) solid #ccc;
+  padding: pxToRem(10) pxToRem(12);
+  border-radius: 100%;
+  position: absolute;
+  top: pxToRem(-30);
+  left: 42%;
 }

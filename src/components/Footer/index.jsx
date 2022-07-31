@@ -19,11 +19,6 @@ const Footer = () => {
         <p className="footer__box-item__title">Marketing</p>
         <span className="footer__box-item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
       </div>
-      <div className="footer__box-item">
-        <i className="fa-solid fa-file-pen"></i>
-        <p className="footer__box-item__title">Report</p>
-        <span className="footer__box-item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-      </div>
     </footer>
   )
 }
