@@ -5,19 +5,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__box-item">
-        <i className="fa fa-users" aria-hidden="true"></i>
-        <p className="footer__box-item__title">Managment</p>
-        <span className="footer__box-item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-      </div>
-      <div className="footer__box-item">
-        <i className="fa-solid fa-globe"></i>
-        <p className="footer__box-item__title">planning</p>
-        <span className="footer__box-item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-      </div>
-      <div className="footer__box-item">
-        <i className="fa-solid fa-store"></i>
-        <p className="footer__box-item__title">Marketing</p>
-        <span className="footer__box-item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <i className="fa fa-code" aria-hidden="true" />
+        <p className="footer__box-item__title">Site created by Jordan Rodriguez Gallardo</p>
+        <span className="footer__box-item__description">Final project - SoftwareLibre Chile - 2022</span>
       </div>
     </footer>
   )
