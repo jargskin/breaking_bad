@@ -27,7 +27,7 @@ const DropdownEpisodes = ({episodes, serie}) => {
                   <Table striped hover responsive>
                     <thead>
                       <tr>
-                        <th style={{ width: '20%'}}>Title</th>
+                        <th style={{ width: '15%'}}>Title</th>
                         <th style={{ width: '10%'}}>Air Date</th>
                         <th style={{ width: '50%'}}>Characters</th>
                       </tr>
