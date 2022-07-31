@@ -11,6 +11,9 @@
     width: 100%;
     z-index: 4;
     margin-top: pxToRem(-82);
+    @media (max-width: 768px) {
+      margin-top: pxToRem(-60);
+    }
 
     &__logo {
       display: inline-flex;
@@ -27,22 +30,12 @@
         font-size: pxToRem(18);
         font-weight: 600;
       }
-    }
-
-    button {
-      display: none;
-
       @media (max-width: 768px) {
-        display: block;
-        width: pxToRem(50);
-        height: pxToRem(50);
-        margin: pxToRem(15);
-        background-color: #0f0f35;
-        border: none;
-        color: $white;
+        img {
+          max-width: pxToRem(180);
+        }
       }
     }
-
     &__list {
       display: flex;
       list-style: none;
@@ -85,6 +78,27 @@
             border-bottom: none;
           }
         }
+      }
+    }
+    .menu-responsive {
+      color: $white;
+      display: none;
+      button {
+        width: pxToRem(50);
+        height: pxToRem(50);
+        margin: pxToRem(15);
+        background-color: $background_hover_green;
+        border: none;
+        &::after {
+          content: "";
+          display: none;
+        }
+        &:active{
+          border: none;
+        }
+      }
+      @media (max-width: 768px) {
+        display: block;
       }
     }
   }
