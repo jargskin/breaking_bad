@@ -1,8 +1,9 @@
 import axios from 'axios';
+const urlBase = 'https://breakingbadapi.com/api/'
 
 const getCharacters = async () => {
   try {
-    return await axios.get('https://breakingbadapi.com/api/characters')
+    return await axios.get(`${urlBase}characters`)
       .then((response) => {
         return response.data;
         })
@@ -13,7 +14,7 @@ const getCharacters = async () => {
 
 const getListEpisodes = async () => {
   try {
-    return await axios.get('https://breakingbadapi.com/api/episodes')
+    return await axios.get(`${urlBase}episodes`)
       .then((response) => {
         return response.data;
         })
